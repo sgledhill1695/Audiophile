@@ -1,30 +1,33 @@
 import Layout from "./layout";
 import Hero from "@/app/components/index/hero";
-import ShopCategory from "@/app/components/index/shopCategory";
-import Adverts from "@/app/components/index/adverts";
+import ShopCategory from "@/app/components/index/categories/shopCategory";
+import Adverts from "@/app/components/index/adverts/adverts";
 
 export default function Index() {
 
     return(
         <>
-        <Layout>
+            <Layout>
+    
+                
+                <Hero/>
 
-            
-            <Hero/>
-
-            <div className="ps-[11%] pe-[11%]">
-                <ShopCategory />
-            </div>
-
-            <div className="ps-[11%] pe-[11%]">
-                <Adverts />
-            </div>
-
-
-
-
-
-        </Layout>
+                <div className='max-w-[1440px] m-auto'>
+                    <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
+    
+                        <ShopCategory />
+    
+                        <Adverts />
+    
+                    </div>
+                </div>
+    
+    
+    
+    
+    
+    
+            </Layout>
         </>
     )
 }

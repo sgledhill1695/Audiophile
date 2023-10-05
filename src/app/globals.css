@@ -13,6 +13,10 @@
   src: url('../../public/font/Manrope-SemiBold.ttf');
 }
 
+body{
+  font-family: manrope-reg;
+}
+
 .manrope-reg{
   font-family: manrope-reg;
 }

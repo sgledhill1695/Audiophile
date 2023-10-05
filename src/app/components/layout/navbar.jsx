@@ -20,47 +20,49 @@ export default function Navbar(){
 
         <div className='brand-black'>
 
-            <div className='md:ps-[11%] md:pe-[11%] pt-[35px] '>
+            <div className='max-w-[1440px] m-auto'>
 
-                <div className='flex justify-between border-b-[1px] border-[#ffffff59] pb-[36px]'>
-
-
-                    <div className='flex items-center sm:gap-[42px] lg:hidden ps-[11%] md:ps-0'>
+                    <div className='ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px] pt-[35px] '>
     
-                        <HamburgerIcon />
+                        <div className='flex justify-between border-b-[1px] border-[#ffffff59] pb-[36px]'>
         
-                        <div className='hidden md:flex lg:hidden'>
-                            <Logo />
+        
+                            <div className='flex items-center sm:gap-[42px] lg:hidden'>
+            
+                                <HamburgerIcon />
+                
+                                <div className='hidden sm:flex xl:hidden'>
+                                    <Logo />
+                                </div>
+            
+                            </div>
+        
+            
+                            <div className='sm:hidden lg:flex'>
+        
+                                <Logo />
+        
+                            </div>
+                            
+            
+                            <nav className='hidden lg:flex gap-[42px]'>
+            
+                                {navigation.map((nav, index) => (
+            
+                                    <Link key={index} className='manrope-reg text-white text-[13px] tracking-[1.2px] hover:text-[#D87D4A]' href={nav.href}>{nav.title}</Link>
+            
+                                ))}
+        
+                            </nav>
+        
+            
+        
+                            <BasketIcon/>
+        
+             
                         </div>
     
                     </div>
-
-    
-                    <div className='md:hidden lg:flex'>
-
-                        <Logo />
-
-                    </div>
-                    
-    
-                    <nav className='hidden lg:flex gap-[42px]'>
-    
-                        {navigation.map((nav, index) => (
-    
-                            <Link key={index} className='manrope-reg text-white text-[13px] tracking-[1.2px] hover:text-[#D87D4A]' href={nav.href}>{nav.title}</Link>
-    
-                        ))}
-
-                    </nav>
-
-    
-                    <div className='pe-[11%] md:pe-0'>
-
-                        <BasketIcon/>
-
-                    </div>
-    
-                </div>
 
             </div>
 

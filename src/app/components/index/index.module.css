@@ -20,11 +20,20 @@
 @media only screen and (max-width: 639px) {
     .hero {
         background-image: url("../../../../public/assets/home/mobile/image-header.jpg");
-        background-position: center bottom;
+        background-position: center 75%;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
     }
+}
+
+@media only screen and (min-width: 1930px) {
+    .hero {
+    background-image: url("../../../../public/assets/home/desktop/image-hero.jpg");
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    }
 }
 
 
@@ -38,29 +47,33 @@
     letter-spacing: 10px;
 }
 
+
+
 .circles{
     background-image: url('../../../../public/assets/home/desktop/pattern-circles.svg');
     background-size: cover;
-    background-position: 50% -150px;
+    background-position: center -120px;
     background-repeat: no-repeat;
-
-
 }
 
-/* @media only screen and (min-width: 600px) {
+@media only screen and (max-width: 1023px) and (min-width: 767px) {
     .circles {
-        width: 100%;
+        background-size: auto;
+        background-position: center -310px;
     }
 }
- */
 
-/*                 background="url(/images/home/desktop/pattern-circles.svg) no-repeat"
-                backgroundSize="cover"
-        
-                backgroundPosition= {
-                        {
-                        base: '50% -8.125rem',
-                            md: '50% -16.125rem',
-                            lg: '-15rem -9.125rem',
-                    }
-                } */
+@media only screen and (min-width: 1024px) { 
+    .circles {
+        background-size: cover;
+        background-position: -250px -110px;
+    }
+}
+
+.zx7Container{
+    background-image: url('../../../../public/assets/home/mobile/image-speaker-zx7.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
