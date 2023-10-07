@@ -2,6 +2,7 @@ import Layout from "./layout";
 import Hero from "@/app/components/index/hero";
 import ShopCategory from "@/app/components/index/categories/shopCategory";
 import Adverts from "@/app/components/index/adverts/adverts";
+import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
 export default function Index() {
 
@@ -17,7 +18,12 @@ export default function Index() {
     
                         <ShopCategory />
     
-                        <Adverts />
+                        <Adverts/>
+
+
+                        <BestAudioGear />
+
+
     
                     </div>
                 </div>
