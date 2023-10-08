@@ -40,3 +40,31 @@ body{
   font-style: normal;
   letter-spacing: 2px;
 }
+
+.page-headers{
+  color: #FFF;
+  text-align: center;
+  font-family: manrope-reg;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.product-title{
+
+  font-family: manrope-semibold;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 640px) {
+  .product-title {
+      font-size: 1.75rem;
+  }
+}
+

@@ -1,4 +1,5 @@
 import styles from '../index.module.css';
+import BlackButton from '../../reuseable/buttons/blackButton';
 
 export default function Zx9Speaker(){
 
@@ -23,8 +24,11 @@ export default function Zx9Speaker(){
                             <h3 className='manrope-title text-white text-[36px] md:text-[56px] leading-[40px] md:leading-[58px] max-w-[230px] text-center mt-[35px] md:mt-[64px] lg:mt-[0px] lg:text-start'>ZX9 SPEAKER</h3>
     
                             <p className='manrope-reg text-white text-center text-[15px] mt-[24px] max-w-[349px] lg:text-start'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-    
-                            <button className='mt-[24px] md:mt-[55px] manrope-reg text-white bg-black px-[31px] py-[15px] text-[13px] tracking-[1px] font-bold mb-[55px]'>SEE PRODUCT</button>
+
+                            <BlackButton
+                                href={'/'}
+                                title={'SEE PRODUCT'}
+                            />
     
                         </div>
     

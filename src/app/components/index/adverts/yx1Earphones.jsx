@@ -1,3 +1,5 @@
+import OutlineButton from "../../reuseable/buttons/outlineButton"
+
 export default function Yx1Earphones(){
 
     return(
@@ -12,11 +14,12 @@ export default function Yx1Earphones(){
 
                     <h3 className='manrope-title text-[1.75rem] font-bold'>YX1 EARPHONES</h3>
 
-                    <button className='border-[1px] border-[black] inline-block w-[160px] py-[15px] text-[0.83rem] font-bold tracking-[1px]'>SEE PRODUCT</button>
-
+                    <OutlineButton
+                        href={'/'}
+                        title={'SEE PRODUCT'}
+                    />
 
                 </div>
-
 
             </div>
         </>

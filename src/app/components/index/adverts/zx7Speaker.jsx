@@ -1,4 +1,5 @@
 import styles from '../index.module.css';
+import OutlineButton from '../../reuseable/buttons/outlineButton';
 
 export default function Zx7Speaker(){
 
@@ -8,7 +9,11 @@ export default function Zx7Speaker(){
 
                 <h3 className='manrope-title text-[1.75rem] font-bold'>ZX7 SPEAKER</h3>
 
-                <button className='border-[1px] border-[black] inline-block w-[160px] py-[15px] text-[0.83rem] font-bold tracking-[1px]'>SEE PRODUCT</button>
+                <OutlineButton
+                    href={'/'}
+                    title={'SEE PRODUCT'}
+                />
+
 
 
             </div>
