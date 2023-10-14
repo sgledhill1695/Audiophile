@@ -1,6 +1,6 @@
 import Layout from "./layout";
 import Hero from "@/app/components/index/hero";
-import ShopCategory from "@/app/components/index/categories/shopCategory";
+import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import Adverts from "@/app/components/index/adverts/adverts";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 

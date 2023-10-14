@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from './category.module.css';
 
 
-export default function Category({imageSource, url}){
+export default function Category({imageSource, url, title}){
 
     return(
         <>
@@ -13,7 +13,7 @@ export default function Category({imageSource, url}){
     
                     <img src={imageSource} className="absolute top-[-40px]" width="138px" ></img>
     
-                    <h2 className="manrope-title text-[0.9rem] font-bold tracking-[1px]">HEADPHONES</h2>
+                    <h2 className="manrope-title text-[0.9rem] font-bold tracking-[1px]">{title}</h2>
     
                     <div className="text-center manrope-title text-[0.8rem] font-bold tracking-[1px] opacity-50 flex justify-center items-center gap-3 mt-[17px] mb-[22px]">
     
