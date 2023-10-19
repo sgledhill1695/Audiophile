@@ -9,9 +9,9 @@ import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
 
-export default function xx99MarkIiHeadphones(){
-    
-    return(
+export default function xx99MarkIiHeadphones() {
+
+    return (
         <>
             <Layout>
 
@@ -35,7 +35,7 @@ export default function xx99MarkIiHeadphones(){
                             />
                         </div>
 
-                        
+
                         <div className="mt-[88px] sm:mt-[120px] lg:mt-[160px] flex flex-col lg:flex-row lg:gap-[50px]">
 
 
@@ -57,17 +57,17 @@ export default function xx99MarkIiHeadphones(){
 
                             </div>
 
-                            
+
                             <div className="mt-[88px] sm:mt-[120px] lg:mt-0">
 
-                                <InTheBox 
+                                <InTheBox
                                     items={
                                         [
-                                            {item: 'Headphone Unit', quantity: '1'},
-                                            {item: 'Replacement Earcups', quantity: '2' },
-                                            {item: 'User Manual', quantity: '1' },
-                                            {item: '3.5mm 5m Audio Cable', quantity: '1' },
-                                            {item: 'Travel Bag', quantity: '1' },
+                                            { item: 'Headphone Unit', quantity: '1' },
+                                            { item: 'Replacement Earcups', quantity: '2' },
+                                            { item: 'User Manual', quantity: '1' },
+                                            { item: '3.5mm 5m Audio Cable', quantity: '1' },
+                                            { item: 'Travel Bag', quantity: '1' },
 
                                         ]
                                     }
@@ -103,7 +103,7 @@ export default function xx99MarkIiHeadphones(){
                                         productUrl={'/'}
                                     />
 
-                                </div>    
+                                </div>
 
                                 <div className="mt-[56px] md:mt-[0px]">
 
@@ -132,23 +132,23 @@ export default function xx99MarkIiHeadphones(){
 
                             </div>
 
-                            <ShopCategory/>
+                            <ShopCategory />
 
-                            <BestAudioGear/>
+                            <BestAudioGear />
 
 
 
 
 
                         </div>
- 
+
 
 
 
 
 
                     </div>
-                </div>   
+                </div>
 
             </Layout>
         </>

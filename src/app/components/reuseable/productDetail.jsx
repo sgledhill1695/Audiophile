@@ -5,15 +5,15 @@ export default function ProductDetail({desktopImage, tabletImage, newProduct, ti
 
     return (
         <>
-            <div className="flex flex-col sm:flex-row items-center lg:gap-[30px] xl:gap-[60px] 2xl:gap-[125px]">
+            <div className="flex flex-col md:flex-row items-center sm:gap-[30px] md:gap-[70px] lg:gap-[30px] xl:gap-[60px] 2xl:gap-[125px]">
 
 
                
                 {/* DESKTOP IMAGE */}
-                <img src={desktopImage} className={`flex sm:hidden lg:flex rounded-[8px] lg:w-1/2 lg:min-w-[350px]`}></img>
+                <img src={desktopImage} className={`flex md:hidden lg:flex rounded-[8px] lg:w-1/2 lg:min-w-[350px]`}></img>
 
                 {/* TABLET IMAGE */}
-                <img src={tabletImage} className={`hidden sm:flex lg:hidden rounded-[8px] w-1/2 lg:min-w-[350px]`}></img>
+                <img src={tabletImage} className={`hidden md:flex lg:hidden rounded-[8px] w-1/2 lg:min-w-[350px]`}></img>
 
 
 

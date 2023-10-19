@@ -9,9 +9,9 @@ import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
 
-export default function xx99MarkIiHeadphones(){
-    
-    return(
+export default function xx99MarkIiHeadphones() {
+
+    return (
         <>
             <Layout>
 
@@ -24,18 +24,17 @@ export default function xx99MarkIiHeadphones(){
 
                         <div>
                             <ProductDetail
-                                alignRight={false}
-                                desktopImage={'/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg'}
-                                tabletImage={'/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg'}
-                                newProduct={true}
-                                title={'XX99 MARK II HEADPHONES'}
-                                description={'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'}
+                                desktopImage={'/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg'}
+                                tabletImage={'/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg'}
+                                newProduct={false}
+                                title={'XX99 MARK I HEADPHONES'}
+                                description={'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.'}
                                 href={'/'}
-                                productPrice={'2,999'}
+                                productPrice={'1,750'}
                             />
                         </div>
 
-                        
+
                         <div className="mt-[88px] sm:mt-[120px] lg:mt-[160px] flex flex-col lg:flex-row lg:gap-[50px]">
 
 
@@ -45,11 +44,11 @@ export default function xx99MarkIiHeadphones(){
                                     features=
                                     {<>
                                         <p>
-                                            Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.
+                                            As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz. 
                                         </p>
 
                                         <p className="mt-6">
-                                            The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.
+                                            From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.
                                         </p>
                                     </>
                                     }
@@ -57,18 +56,16 @@ export default function xx99MarkIiHeadphones(){
 
                             </div>
 
-                            
+
                             <div className="mt-[88px] sm:mt-[120px] lg:mt-0">
 
-                                <InTheBox 
+                                <InTheBox
                                     items={
                                         [
-                                            {item: 'Headphone Unit', quantity: '1'},
-                                            {item: 'Replacement Earcups', quantity: '2' },
-                                            {item: 'User Manual', quantity: '1' },
-                                            {item: '3.5mm 5m Audio Cable', quantity: '1' },
-                                            {item: 'Travel Bag', quantity: '1' },
-
+                                            { item: 'Headphone Unit', quantity: '1' },
+                                            { item: 'Replacement Earcups', quantity: '2' },
+                                            { item: 'User Manual', quantity: '1' },
+                                            { item: '3.5mm 5m Audio Cable', quantity: '1' },
                                         ]
                                     }
                                 />
@@ -96,14 +93,14 @@ export default function xx99MarkIiHeadphones(){
                                 <div>
 
                                     <YouMayAlsoLike
-                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-one-headphones.jpg'}
-                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
-                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
-                                        productTitle={'XX99 MARK I'}
+                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-two-headphones.jpg'}
+                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-two-headphones.jpg'}
+                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-two-headphones.jpg'}
+                                        productTitle={'XX99 MARK II'}
                                         productUrl={'/'}
                                     />
 
-                                </div>    
+                                </div>
 
                                 <div className="mt-[56px] md:mt-[0px]">
 
@@ -132,23 +129,23 @@ export default function xx99MarkIiHeadphones(){
 
                             </div>
 
-                            <ShopCategory/>
+                            <ShopCategory />
 
-                            <BestAudioGear/>
+                            <BestAudioGear />
 
 
 
 
 
                         </div>
- 
+
 
 
 
 
 
                     </div>
-                </div>   
+                </div>
 
             </Layout>
         </>
