@@ -5,7 +5,7 @@ import BasketIcon from './basketIcon';
 import HamburgerIcon from './hamburgerIcon';
 
 
-export default function Navbar(){
+export default function Navbar({handleOpenBasket}){
 
     const navigation = [
         {title: 'HOME', href: '/'},
@@ -57,7 +57,7 @@ export default function Navbar(){
         
             
         
-                            <BasketIcon/>
+                            <BasketIcon handleOpenBasket={handleOpenBasket}/>
         
              
                         </div>

@@ -1,4 +1,41 @@
-export default function addToCart(){
+import { useContext, useState } from "react";
+import { BasketContext } from "@/app/context/basketContext";
+
+
+export default function addToCart({title, productPrice, image}){
+
+    const basket = useContext(BasketContext);
+
+    const handleAddToBasket = () => {
+
+        let productsToAdd = [];
+
+
+        if(localStorage.getItem("basketItems")){
+
+            productsToAdd = JSON.parse(localStorage.getItem("basketItems"))
+
+
+        }
+
+        console.log(productsToAdd);
+
+
+        productsToAdd.push({
+            product: title,
+            price: productPrice,
+            quantity: 1,
+            productImage: image
+        });
+
+        console.log(productsToAdd);
+
+        localStorage.setItem("basketItems", JSON.stringify(productsToAdd));
+
+        basket.setBasket(productsToAdd);
+
+        
+    }
 
     return(
         <>
@@ -23,7 +60,7 @@ export default function addToCart(){
                 </div>
 
 
-                <button className='px-[31.5px] py-[15px]  brand-orange-background hover:bg-[#FBAF85] text-white manrope-semibold text-[0.8rems]'>ADD TO CART</button>
+                <button onClick={() => handleAddToBasket()} className='px-[31.5px] py-[15px]  brand-orange-background hover:bg-[#FBAF85] text-white manrope-semibold text-[0.8rems]'>ADD TO CART</button>
 
              </div>
 

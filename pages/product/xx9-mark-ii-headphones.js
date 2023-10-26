@@ -32,6 +32,7 @@ export default function xx99MarkIiHeadphones(){
                                 description={'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'}
                                 href={'/'}
                                 productPrice={'2,999'}
+                                id={2}
                             />
                         </div>
 

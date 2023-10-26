@@ -1,7 +1,7 @@
 import OrangeButton from "./buttons/orangeButton";
 import AddToCart from "./buttons/addToCart";
 
-export default function ProductDetail({desktopImage, tabletImage, newProduct, title, description, href, productPrice }) {
+export default function ProductDetail({desktopImage, tabletImage, newProduct, title, description, href, productPrice, id }) {
 
     return (
         <>
@@ -35,7 +35,12 @@ export default function ProductDetail({desktopImage, tabletImage, newProduct, ti
 
                         
 
-                        <AddToCart/>
+                        <AddToCart
+                            id={id}
+                            title={title}
+                            productPrice={productPrice}
+                            image={desktopImage}
+                        />
 
 
                     </div>

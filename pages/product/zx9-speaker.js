@@ -9,7 +9,7 @@ import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
 
-export default function xx59Headphones() {
+export default function zx9Speakers() {
 
     return (
         <>
@@ -24,14 +24,19 @@ export default function xx59Headphones() {
 
                         <div>
                             <ProductDetail
-                                desktopImage={'/assets/product-xx59-headphones/desktop/image-product.jpg'}
-                                tabletImage={'/assets/product-xx59headphones/tablet/image-product.jpg'}
-                                newProduct={false}
-                                title={'XX59 HEADPHONES'}
-                                description={'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'}
+                                desktopImage={'/assets/product-zx9-speaker/desktop/image-product.jpg'}
+                                tabletImage={'/assets/product-zx9-speaker/tablet/image-product.jpg'}
+                                newProduct={true}
+                                title={
+                                    <>
+                                        <p>ZX9</p>
+                                        <p>SPEAKER</p>
+                                    </>
+                                }
+                                description={'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'}
                                 href={'/'}
-                                productPrice={'899'}
-                                id={3}
+                                productPrice={'4,500'}
+                                id={6}
 
                             />
                         </div>
@@ -46,12 +51,12 @@ export default function xx59Headphones() {
                                     features=
                                     {<>
                                         <p>
-                                            These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.
+                                            Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m).
                                         </p>
 
                                         <p className="mt-6">
-                                            More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C. 
-                                       </p>
+                                            Discover clear, more natural sounding highs than the competition with ZX9’s signature planar diaphragm tweeter. Equally important is its powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass unit. You’ll be able to enjoy equal sound quality whether in a large room or small den. Furthermore, you will experience new sensations from old songs since it can respond to even the subtle waveforms.
+                                        </p>
                                     </>
                                     }
                                 />
@@ -64,10 +69,12 @@ export default function xx59Headphones() {
                                 <InTheBox
                                     items={
                                         [
-                                            { item: 'Headphone Unit', quantity: '1' },
-                                            { item: 'Replacement Earcups', quantity: '2' },
+                                            { item: 'Speaker Unit', quantity: '2' },
+                                            { item: 'Speaker Cloth Panel', quantity: '2' },
                                             { item: 'User Manual', quantity: '1' },
-                                            { item: '5.5mm 5m Audio Cable', quantity: '1' },
+                                            { item: '3.5mm 10m Audio Cable', quantity: '1' },
+                                            { item: '10m Optical Cable', quantity: '1' },
+
                                         ]
                                     }
                                 />
@@ -95,10 +102,10 @@ export default function xx59Headphones() {
                                 <div>
 
                                     <YouMayAlsoLike
-                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-two-headphones.jpg'}
-                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-two-headphones.jpg'}
-                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-two-headphones.jpg'}
-                                        productTitle={'XX99 MARK II'}
+                                        mobileImage={'/assets/shared/mobile/image-zx7-speaker.jpg'}
+                                        tabletImage={'/assets/shared/tablet/image-zx7-speaker.jpg'}
+                                        desktopImage={'/assets/shared/desktop/image-zx7-speaker.jpg'}
+                                        productTitle={'ZX7 SPEAKER'}
                                         productUrl={'/'}
                                     />
 
@@ -119,10 +126,10 @@ export default function xx59Headphones() {
                                 <div className="mt-[56px] md:mt-[0px]">
 
                                     <YouMayAlsoLike
-                                        mobileImage={'/assets/shared/mobile/image-zx9-speaker.jpg'}
-                                        tabletImage={'/assets/shared/tablet/image-zx9-speaker.jpg'}
-                                        desktopImage={'/assets/shared/desktop/image-zx9-speaker.jpg'}
-                                        productTitle={'ZX9 SPEAKER'}
+                                        mobileImage={'/assets/shared/mobile/image-xx59-headphones.jpg'}
+                                        tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
+                                        desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
+                                        productTitle={'XX59'}
                                         productUrl={'/'}
                                     />
 

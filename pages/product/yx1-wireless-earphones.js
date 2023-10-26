@@ -9,7 +9,7 @@ import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
 
-export default function xx59Headphones() {
+export default function yx1WirelessEarphones() {
 
     return (
         <>
@@ -24,15 +24,14 @@ export default function xx59Headphones() {
 
                         <div>
                             <ProductDetail
-                                desktopImage={'/assets/product-xx59-headphones/desktop/image-product.jpg'}
-                                tabletImage={'/assets/product-xx59headphones/tablet/image-product.jpg'}
-                                newProduct={false}
-                                title={'XX59 HEADPHONES'}
-                                description={'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'}
+                                desktopImage={'/assets/product-yx1-earphones/desktop/image-product.jpg'}
+                                tabletImage={'/assets/product-yx1-earphones/tablet/image-product.jpg'}
+                                newProduct={true}
+                                title={'YX1 WIRELESS EARPHONES'}
+                                description={'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.'}
                                 href={'/'}
-                                productPrice={'899'}
-                                id={3}
-
+                                productPrice={'599'}
+                                id={4}
                             />
                         </div>
 
@@ -46,12 +45,12 @@ export default function xx59Headphones() {
                                     features=
                                     {<>
                                         <p>
-                                            These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.
+                                            Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.
                                         </p>
 
                                         <p className="mt-6">
-                                            More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C. 
-                                       </p>
+                                            The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.
+                                        </p>
                                     </>
                                     }
                                 />
@@ -64,10 +63,12 @@ export default function xx59Headphones() {
                                 <InTheBox
                                     items={
                                         [
-                                            { item: 'Headphone Unit', quantity: '1' },
-                                            { item: 'Replacement Earcups', quantity: '2' },
+                                            { item: 'Earphone Unit', quantity: '2' },
+                                            { item: 'Multi-size Earplugs', quantity: '6' },
                                             { item: 'User Manual', quantity: '1' },
-                                            { item: '5.5mm 5m Audio Cable', quantity: '1' },
+                                            { item: 'USB-C Charging Cable', quantity: '1' },
+                                            { item: 'Travel Pouch', quantity: '1' },
+
                                         ]
                                     }
                                 />
@@ -95,10 +96,10 @@ export default function xx59Headphones() {
                                 <div>
 
                                     <YouMayAlsoLike
-                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-two-headphones.jpg'}
-                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-two-headphones.jpg'}
-                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-two-headphones.jpg'}
-                                        productTitle={'XX99 MARK II'}
+                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-one-headphones.jpg'}
+                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
+                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
+                                        productTitle={'XX99 MARK I'}
                                         productUrl={'/'}
                                     />
 
@@ -107,10 +108,10 @@ export default function xx59Headphones() {
                                 <div className="mt-[56px] md:mt-[0px]">
 
                                     <YouMayAlsoLike
-                                        mobileImage={'/assets/shared/mobile/image-xx99-mark-one-headphones.jpg'}
-                                        tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
-                                        desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
-                                        productTitle={'XX99 MARK I'}
+                                        mobileImage={'/assets/shared/mobile/image-xx59-headphones.jpg'}
+                                        tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
+                                        desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
+                                        productTitle={'XX59'}
                                         productUrl={'/'}
                                     />
 
