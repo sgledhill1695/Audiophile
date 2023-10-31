@@ -11,12 +11,17 @@ export function BasketProvider({children}){
 
         if (localStorage.getItem("basketItems")) {
 
-            setBasket([JSON.parse(localStorage.getItem("basketItems"))]);
+            setBasket(JSON.parse(localStorage.getItem("basketItems")));
 
         }
 
     }, []);
 
+
+/*     useEffect(() => {
+        console.log(basket)
+    }, [basket])
+ */
 
 
     return(

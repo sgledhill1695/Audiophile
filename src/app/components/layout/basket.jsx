@@ -6,11 +6,6 @@ export default function Basket({openBasket}){
 
     const {basket} = useContext(BasketContext);
 
-    console.log(basket)
-
-
-
-
     return(
         <>
             <div className={`${openBasket ? 'block' : 'hidden'} fixed h-[100%] w-[100%] bg-[#00000071] overflow-hidden z-50`}>
