@@ -30,7 +30,7 @@ export default function xx59Headphones() {
                                 title={'XX59 HEADPHONES'}
                                 description={'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'}
                                 href={'/'}
-                                productPrice={'899'}
+                                productPrice={899}
                                 id={3}
 
                             />

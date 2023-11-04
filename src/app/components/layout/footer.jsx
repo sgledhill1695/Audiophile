@@ -14,7 +14,7 @@ export default function Footer(){
     return(
         <>
 
-            <div className="bg-[#101010] mt-[120px] pt-[75px]">
+            <div className="bg-[#101010] pt-[75px]">
 
 
                 <div className='max-w-[1440px] m-auto'>

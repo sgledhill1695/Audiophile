@@ -3,6 +3,7 @@ import PageHeader from "@/app/components/reuseable/pageHeader";
 import Product from "@/app/components/reuseable/product";
 import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
+import GoBack from "@/app/components/reuseable/goBack";
 
 export default function HeadphonesCategory(){
 

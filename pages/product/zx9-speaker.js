@@ -35,7 +35,7 @@ export default function zx9Speakers() {
                                 }
                                 description={'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'}
                                 href={'/'}
-                                productPrice={'4,500'}
+                                productPrice={4500}
                                 id={6}
 
                             />

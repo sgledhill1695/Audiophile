@@ -35,7 +35,7 @@ export default function zx7Speakers() {
                                 }
                                 description={'Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.'}
                                 href={'/'}
-                                productPrice={'3,500'}
+                                productPrice={3500}
                                 id={5}
 
                             />
