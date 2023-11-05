@@ -21,11 +21,11 @@ export default function Checkout(){
     
                             <div className="flex justify-between mt-[38px]">
 
-                                <div className="w-[100%]">
+                                <div className="w-[100%] max-w-[730px]">
                                     <CheckoutForm />
                                 </div>
     
-                                <div className="w-[100%]">
+                                <div className="w-[100%] max-w-[350px]">
                                     <CheckoutSummary />
                                 </div>
     

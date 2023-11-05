@@ -2,7 +2,9 @@ export default function checkoutSummary(){
 
     return(
         <>
-            summary
+            <div>
+                summary
+            </div>
         </>
     )
 }
