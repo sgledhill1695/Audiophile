@@ -15,17 +15,17 @@ export default function Checkout(){
                     <div className='max-w-[1440px] m-auto'>
                         <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
                             
-                            <div className="pt-[80px]">
+                            <div className="pt-[16px] sm:pt-[48px] lg:pt-[80px]">
                                 <GoBack />
                             </div>
     
-                            <div className="flex justify-between mt-[38px]">
+                            <div className="flex flex-col xl:flex-row xl:justify-between pt-[24px] lg:mt-[38px] gap-[10px]">
 
-                                <div className="w-[100%] max-w-[730px]">
+                                <div className="w-[100%] lg:max-w-[730px]">
                                     <CheckoutForm />
                                 </div>
     
-                                <div className="w-[100%] max-w-[350px]">
+                                <div className="w-[100%] lg:max-w-[350px]">
                                     <CheckoutSummary />
                                 </div>
     
