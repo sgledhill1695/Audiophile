@@ -1,24 +1,26 @@
 import InputLabel from "./inputLabel";
 import { useState } from "react";
+import {useForm} from 'react-hook-form';
 
 export default function checkoutForm(){
 
-    const [name, setName] = useState('');
-    const [nameError, setNameError] = useState({
-        error: false,
-        errorMessage: ''
-    });
+    const {register, handleSubmit, formState: {errors} } = useForm();
+
+    console.log(errors)
+
 
     return(
         <>
 
-            <div className="bg-[white] px-[24px] py-[24px] sm:px-[48px] sm:py-[54px] rounded-[8px] mb-[141px]">
+            <div className="bg-[white] px-[24px] py-[24px] sm:px-[48px] sm:py-[54px] rounded-[8px] xl:mb-[141px]">
 
                 <h1 className="text-[2rem] text-[#000]  manrope-semibold tracking-[1.1px]">CHECKOUT</h1>
 
                 <h2 className="manrope-reg text-[#D87D4A] lg:text-start text-[0.8rem] font-bold tracking-[0.9px] mt-[41px] ">BILLING DETAILS</h2>
 
-                <form>
+                <form onSubmit={handleSubmit((data) => {
+                    console.log(data)
+                })}>
 
                     <div className="flex flex-col sm:flex-row gap-[24px] sm:gap-[16px] mt-[16px]">
 
@@ -28,7 +30,13 @@ export default function checkoutForm(){
                                 label={'Name'}
                                 htmlFor={'name'}
                             />
-                            <input id="name" type="text" placeholder="Alexei Ward" className="border-[1px] rounded-[8px] border-[#CFCFCF] focus:border-[#D87D4A] focus:outline-none hover:cursor-pointer py-[10px] px-[24px] text-[0.9rem] font-bold caret-[#D87D4A]" />
+                            <input 
+                                id="name" 
+                                type="text" 
+                                placeholder="Alexei Ward" 
+                                className="border-[1px] rounded-[8px] border-[#CFCFCF] focus:border-[#D87D4A] focus:outline-none hover:cursor-pointer py-[10px] px-[24px] text-[0.9rem] font-bold caret-[#D87D4A]"
+                                {...register("name" , {required: 'Please provide your name'})}
+                                 />
                         </div>
                         
                         {/* EMAIL */}
@@ -159,6 +167,8 @@ export default function checkoutForm(){
                         </div>
 
                     </div>
+
+                    <button type="submit" className="bg-[blue]">Subit</button>
 
                 </form>
 

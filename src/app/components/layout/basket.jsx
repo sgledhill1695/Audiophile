@@ -6,7 +6,7 @@ export default function Basket({openBasket}){
 
     const {basket} = useContext(BasketContext);
 
-    const [itemsInBasket, setItemsInBasket] = useState([])
+    const [itemsInBasket, setItemsInBasket] = useState([]);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export default function Basket({openBasket}){
 
             var trimProduct = b.product.replace(/headphones/gi, '');
 
-            const itemInBasket ={
+            const itemInBasket = {
                 id: b.id,
                 product: trimProduct,
                 price: b.price,
@@ -144,7 +144,7 @@ export default function Basket({openBasket}){
                                                     <img src={item.productImage} className="w-[64px] rounded-[8px]" />
                                                     <div className="flex flex-col">
                                                         <p className="text-[0.93rem] font-bold">{item.product}</p>
-                                                        <p className="text-[0.87] font-bold opacity-50">£ {item.price}</p>
+                                                        <p className="text-[0.87rem] font-bold opacity-50">£ {item.price}</p>
                                                     </div>
                                                 </div>
 
