@@ -153,7 +153,7 @@ export default function checkoutSummary(){
                     <p className="text-[1.12rem] font-bold text-[#D87D4A]">£{grandTotal}</p>
                 </div>
 
-                <button className="bg-[#D87D4A] hover:bg-[#FBAF85] py-[15px] text-[white] w-[100%] mt-[47px] text-[0.81rem] font-bold tracking-[1px]">
+                <button type="submit" className="bg-[#D87D4A] hover:bg-[#FBAF85] py-[15px] text-[white] w-[100%] mt-[47px] text-[0.81rem] font-bold tracking-[1px]">
                     CONTINUE & PAY
                 </button>
 
