@@ -18,12 +18,6 @@ export function BasketProvider({children}){
     }, []);
 
 
-/*     useEffect(() => {
-        console.log(basket)
-    }, [basket])
- */
-
-
     return(
         <>
             <BasketContext.Provider value={{basket, setBasket}}>

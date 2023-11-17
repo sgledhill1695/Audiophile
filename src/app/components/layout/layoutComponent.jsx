@@ -17,7 +17,10 @@ export default function Layout({children}) {
         <>
             <Navbar handleOpenBasket={handleOpenBasket}/>
 
-                <Basket openBasket={openBasket}/>
+                <Basket 
+                    setOpenBasket={setOpenBasket}
+                    openBasket={openBasket}
+                />
     
                     {children}
 

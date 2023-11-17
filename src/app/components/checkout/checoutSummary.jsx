@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 import OrangeButton from "../reuseable/buttons/orangeButton";
 import currency from "currency.js";
 
+
 export default function checkoutSummary(){
-    
+
+    const { basket } = useContext(BasketContext);
+
     //Set up formatting from currency.js
     const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
 
-
-
-
-    const {basket} = useContext(BasketContext);
 
     const [itemsInBasket, setItemsInBasket] = useState([]);
     const [total, setTotal] = useState(0);
@@ -21,30 +20,39 @@ export default function checkoutSummary(){
 
     useEffect(() => {
 
-        const itemsInLocalStorage = [];
+        if(basket.length > 0 ){
 
-        basket.map(b => {
+            const itemsInLocalStorage = [];
+    
+            basket.map(b => {
+    
+                var trimProduct = b.product.replace(/headphones/gi, '');
+    
+                const itemInBasket = {
+                    id: b.id,
+                    product: trimProduct,
+                    price: b.price,
+                    productImage: b.productImage,
+                    quantity: 1
+                };
+    
+                const existingItem = itemsInLocalStorage.find(item => item.id === b.id);
+    
+                if (existingItem) {
 
-            var trimProduct = b.product.replace(/headphones/gi, '');
+                    existingItem.quantity++;
 
-            const itemInBasket = {
-                id: b.id,
-                product: trimProduct,
-                price: b.price,
-                productImage: b.productImage,
-                quantity: 1
-            };
+                } else {
 
-            const existingItem = itemsInLocalStorage.find(item => item.id === b.id);
+                    itemsInLocalStorage.push(itemInBasket);
 
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                itemsInLocalStorage.push(itemInBasket);
-            }
-        });
+                };
+            });
+    
+            setItemsInBasket(itemsInLocalStorage);
 
-        setItemsInBasket(itemsInLocalStorage);
+        };
+
 
     }, [basket]);
 

@@ -1,11 +1,23 @@
+import { useRouter } from "next/router";
 import InputLabel from "./inputLabel";
 import { useState, useEffect } from "react";
 import {useForm, Controller} from 'react-hook-form';
 
 export default function checkoutForm({watch, errors, handleSubmit, handleFormSubmit, register, formState}){
 
+    const router = useRouter();
+    
+    //Redirect if user has nothing in basket
+    useEffect(() => {
 
+        const itemsInBasket = localStorage.getItem("basketItems");
 
+        if(!itemsInBasket){
+
+            router.push('/');
+
+        };
+    },[]);
 
     const watchPaymentMethod = watch("paymentMethod");
 

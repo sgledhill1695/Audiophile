@@ -3,27 +3,37 @@ import CheckoutForm from "@/app/components/checkout/checkoutForm";
 import CheckoutSummary from "@/app/components/checkout/checoutSummary";
 import GoBack from "@/app/components/reuseable/goBack";
 import { useForm } from 'react-hook-form';
+import { BaseContext } from "next/dist/shared/lib/utils";
+import { useRouter } from 'next/router';
+import { useState } from "react";
+import OrderConfirmation from "@/app/components/checkout/orderConfirmation";
+
 
 export default function Checkout(){
 
     const { register, handleSubmit, control, formState: { errors }, watch } = useForm();
 
+    const [formComplete, setFormComplete] = useState(true);
+
+    const router = useRouter();
+
     const handleFormSubmit = (data) => {
 
-       // e.preventDefault();
+        document.body.classList.add('overflow-hidden');
+        setFormComplete(false);
 
-        console.log(data);
-
-        alert('submitted');
-
-
-    }
+    };
 
 
 
     return(
         <>
             <Layout>
+
+                <OrderConfirmation
+                    formComplete={formComplete}
+                />
+
 
                 <div className="bg-[#F2F2F2]">
 
@@ -70,10 +80,7 @@ export default function Checkout(){
 
                 </div>
 
-
-
-
-
+                
 
 
             </Layout>

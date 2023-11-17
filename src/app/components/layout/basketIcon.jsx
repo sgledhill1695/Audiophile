@@ -5,7 +5,7 @@ export default function BasketIcon({handleOpenBasket}){
         document.body.classList.add('overflow-hidden');
         handleOpenBasket();
 
-    }
+    };
 
     return(
         <>
