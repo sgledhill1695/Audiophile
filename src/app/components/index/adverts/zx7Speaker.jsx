@@ -10,7 +10,7 @@ export default function Zx7Speaker(){
                 <h3 className='manrope-title text-[1.75rem] font-bold'>ZX7 SPEAKER</h3>
 
                 <OutlineButton
-                    href={'/'}
+                    href={'product/zx7-speaker'}
                     title={'SEE PRODUCT'}
                 />
 

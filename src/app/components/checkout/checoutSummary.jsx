@@ -12,7 +12,6 @@ export default function checkoutSummary(){
     //Set up formatting from currency.js
     const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
 
-
     const [itemsInBasket, setItemsInBasket] = useState([]);
     const [total, setTotal] = useState(0);
     const [vatTotal , setVatTotal] = useState(0);

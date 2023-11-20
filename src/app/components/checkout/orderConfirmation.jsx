@@ -1,9 +1,16 @@
 import { useEffect, useState, useContext } from "react";
 import { BasketContext } from "@/app/context/basketContext";
+import currency from "currency.js";
+import Link from "next/link";
 
 export default function OrderConfirmation({formComplete}){
 
+    //Set up formatting from currency.js
+    const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+
     const [open, setOpen] = useState(false);
+
+    const [grandTotal, setGrandTotal] = useState(0);
 
     const handleOpen = () => {
 
@@ -64,6 +71,53 @@ export default function OrderConfirmation({formComplete}){
 
 
     }, [basket]);
+
+
+    //Calculate checkout totals
+    useEffect(() => {
+
+        let basketTotal = 0;
+        let vatAmount = 0;
+        let vatTotal = 0;
+
+
+        const vatSubtract = 80;
+
+        itemsInBasket.map(item => {
+
+
+            if (item.quantity <= 1) {
+
+
+                basketTotal = basketTotal + item.price;
+
+                const vat = item.price - (item.price * (vatSubtract / 100));
+
+                vatAmount = vatTotal + vat;
+
+            } else if (item.quantity > 1) {
+
+
+                for (let i = 0; i < item.quantity; i++) {
+
+                    basketTotal = basketTotal + item.price;
+                    const vat = item.price - (item.price * (vatSubtract / 100));
+                    vatAmount += vat;
+
+                };
+
+            };
+
+            const calcGrandTotal = currency(basketTotal).add(vatAmount).add(50);
+
+            setGrandTotal(POUND(calcGrandTotal).format());
+
+
+        });
+
+
+    }, [itemsInBasket])
+
 
 
     const closeList = {
@@ -137,7 +191,7 @@ export default function OrderConfirmation({formComplete}){
                                     <div className="pt-[16px] max-h-[0px]" style={open ? openList : closeList}>
                                         {otherItems.map(item => (
 
-                                            <div className="flex justify-between gap-[5px]">
+                                            <div className="flex justify-between ">
 
                                                 <img src={item.productImage}  className="max-w-[50px]"/>
         
@@ -159,11 +213,11 @@ export default function OrderConfirmation({formComplete}){
 
                                 {otherItems.length > 0 && open ? (
 
-                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-2 cursor-pointer">View less</p>
+                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">View less</p>
                             
                                 ) : (
 
-                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-2 cursor-pointer">and {otherItems.length} other item(s)</p>
+                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">and {otherItems.length} other item(s)</p>
  
                                 )}
 
@@ -178,15 +232,19 @@ export default function OrderConfirmation({formComplete}){
 
                                 <p className="text-[0.93rem] text-[#ffffff80]">GRAND TOTAL</p>
 
-                                <p className="text-[white] text-[1.1rem] font-bold pt-[8px] sm:pt-[0px]">£5,446</p>
+                                <p className="text-[white] text-[1.1rem] font-bold pt-[8px] sm:pt-[0px]">£ {grandTotal}</p>
 
                             </div>
 
                         </div>
 
-                        <button type="submit" className="bg-[#D87D4A] hover:bg-[#FBAF85] py-[15px] text-[white] w-[100%] mt-[47px] text-[0.81rem] font-bold tracking-[1px]">
-                            BACK TO HOME
-                        </button>
+
+                        <Link href="/">
+                             <button type="submit" className="bg-[#D87D4A] hover:bg-[#FBAF85] py-[15px] text-[white] w-[100%] mt-[47px] text-[0.81rem] font-bold tracking-[1px]">
+                                 BACK TO HOME
+                             </button>
+                        </Link>
+
 
                     </div>
 

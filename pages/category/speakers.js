@@ -15,7 +15,7 @@ export default function SpeakersCategory() {
                     title={'SPEAKERS'}
                 />
 
-                <div className='max-w-[1440px] m-auto '>
+                <div className='max-w-[1440px] m-auto mb-[120px] sm:mb-[96px] lg:mb-[200px]'>
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
                         <div className="sm:hidden mt-[16px] mb-[24px]">
@@ -36,7 +36,7 @@ export default function SpeakersCategory() {
                                     </>
                                 }
                                 description={'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'}
-                                href={'/'}
+                                href={'/product/zx9-speaker'}
                             />
                         </div>
 
@@ -54,7 +54,7 @@ export default function SpeakersCategory() {
                                     </>
                                 }
                                 description={'Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.'}
-                                href={'/'}
+                                href={'/product/zx7-speaker'}
                             />
                         </div>
 

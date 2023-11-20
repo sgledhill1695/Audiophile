@@ -51,8 +51,7 @@ export default function Basket({openBasket, setOpenBasket}){
 
     const handleDecrease = (id) => {
 
-        const basketItems =[...itemsInBasket]
-
+        const basketItems = [...itemsInBasket];
 
         basketItems.map(item => {
 
@@ -63,7 +62,6 @@ export default function Basket({openBasket, setOpenBasket}){
                     item.quantity = item.quantity - 1
 
                 };
-
             };
         });
 
@@ -73,7 +71,7 @@ export default function Basket({openBasket, setOpenBasket}){
 
     const handleIncrease = (id) => {
 
-        const basketItems = [...itemsInBasket]
+        const basketItems = [...itemsInBasket];
 
         basketItems.map(item => {
 
@@ -111,7 +109,7 @@ export default function Basket({openBasket, setOpenBasket}){
         });
 
 
-    },[itemsInBasket])
+    },[itemsInBasket]);
 
     const handleRemoveAll = () => {
 
@@ -119,7 +117,7 @@ export default function Basket({openBasket, setOpenBasket}){
         setBasket([]);
         setItemsInBasket([]);
         setTotal(0);
-    }
+    };
 
     const handleCheckout = () => {
 
@@ -186,19 +184,44 @@ export default function Basket({openBasket, setOpenBasket}){
 
         document.addEventListener("mousedown", handler);
 
-    }, [basket])
+    }, [basket]);
+
+    const openMain = {
+        visibility: "visible",
+        opacity: "1",
+        backgroundColor: "#00000071",
+        transition: "visibility 0s, background-color 0.2s linear"
+    };
+
+    const closeMain = {
+        visibility: "hidden",
+        opacity: 0,
+        transition: "visibility 0s, background-color 0.2s ease-out"
+    };
+
+    const openBask = {
+        opacity: "1",
+        transition: "opacity 0.2s ease-in 0.1s",
+    };
+
+    const closeBask = {
+        opacity: "0",
+        transition: "opacity 0.2s",
+    };
+
+
 
 
     return(
         <>
-            <div className={`${openBasket ? 'block' : 'hidden'} fixed h-[100%] w-[100%] bg-[#00000071] overflow-hidden z-50`}>
+            <div className={`fixed h-[100%] w-[100%]  overflow-hidden z-50`} style={openBasket ? openMain : closeMain}>
 
                 <div className='max-w-[1440px] m-auto'>
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
                         <div className="relative">
 
-                            <div className="bg-[white] w-[100%] sm:w-[377px] absolute right-0 top-5 flex flex-col p-[32px] rounded-[8px]" ref={basketRef}>
+                            <div className="bg-[white] w-[100%] sm:w-[377px] absolute right-0 top-5 flex flex-col p-[32px] rounded-[8px]" ref={basketRef} style={openBasket ? openBask : closeBask}>
 
                                 {basket.length > 0 ? (
                                     <>

@@ -161,7 +161,7 @@ export default function checkoutForm({watch, errors, handleSubmit, handleFormSub
                         <input
                             id="address" 
                             type="text" 
-                            placeholder="13 Williams Aveneu" 
+                            placeholder="13 Williams Avenue" 
                             className={`${errors.address ? 'border-[2px] border-[#CD2C2C]' : 'border-[1px] border-[#CFCFCF]'} border-[1px] rounded-[8px] focus:border-[#D87D4A] focus:outline-none hover:cursor-pointer py-[10px] px-[24px] text-[0.9rem] font-bold caret-[#D87D4A] w-[100%]`}
                             {...register("address", { required: true})}
                         />

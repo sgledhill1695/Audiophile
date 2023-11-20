@@ -9,9 +9,9 @@ export default function Navbar({handleOpenBasket}){
 
     const navigation = [
         {title: 'HOME', href: '/'},
-        {title: 'HEADPHONES', href: '/' },
-        {title: 'SPEAKERS', href: '/' },
-        {title: 'EARPHONES', href: '/' },
+        {title: 'HEADPHONES', href: '/category/headphones' },
+        {title: 'SPEAKERS', href: '/category/speakers' },
+        {title: 'EARPHONES', href: '/category/earphones' },
     ];
 
 

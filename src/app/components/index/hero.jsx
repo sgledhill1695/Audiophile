@@ -21,10 +21,10 @@ export default function Hero(){
         
                         <h1 className='manrope-title text-white text-[36px] sm:text-[56px] lg:text-[56px] leading-[40px] sm:leading-[58px] mt-[24px] font-bold text-center lg:text-left max-w-[328px] sm:max-w-[396px]'>XX99 MARK II HEADPHONES</h1>
         
-                        <p className='mt-[24px] text-white manrope-reg leading-[25px] font-medium text-[9rems] opacity-75 text-center lg:text-start max-w-[328px] sm:max-w-[389px] '>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                        <p className='mt-[24px] text-white manrope-reg leading-[25px] font-medium text-[9rems] opacity-75 text-center lg:text-start max-w-[328px] sm:max-w-[389px] mb-[28px] sm:mb-[40px]'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
         
                         <OrangeButton
-                            href="/"
+                            href="product/xx9-mark-ii-headphones"
                             title="SEE PRODUCT"
                         />
                                

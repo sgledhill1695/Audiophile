@@ -26,7 +26,7 @@ export default function Zx9Speaker(){
                             <p className='manrope-reg text-white text-center text-[15px] mt-[24px] max-w-[349px] lg:text-start'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
 
                             <BlackButton
-                                href={'/'}
+                                href={'product/zx9-speaker'}
                                 title={'SEE PRODUCT'}
                             />
     

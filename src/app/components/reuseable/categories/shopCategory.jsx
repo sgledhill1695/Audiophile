@@ -16,13 +16,13 @@ export default function ShopCategory(){
                 <Category
                     imageSource={"/assets/shared/desktop/image-category-thumbnail-speakers.png"}
                     title={'SPEAKERS'}
-                    url={"/"}
+                    url={"/category/speakers"}
                 />
 
                 <Category
                     imageSource={"/assets/shared/desktop/image-category-thumbnail-earphones.png"}
                     title={'EARPHONES'}
-                    url={"/"}
+                    url={"/category/earphones"}
                 />
 
     

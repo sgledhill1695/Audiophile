@@ -5,22 +5,29 @@ import GoBack from "@/app/components/reuseable/goBack";
 import { useForm } from 'react-hook-form';
 import { BaseContext } from "next/dist/shared/lib/utils";
 import { useRouter } from 'next/router';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import OrderConfirmation from "@/app/components/checkout/orderConfirmation";
+import { BasketContext } from "@/app/context/basketContext";
+
 
 
 export default function Checkout(){
 
+    const basket = useContext(BasketContext);
+
     const { register, handleSubmit, control, formState: { errors }, watch } = useForm();
 
-    const [formComplete, setFormComplete] = useState(true);
+    const [formComplete, setFormComplete] = useState(false);
 
     const router = useRouter();
 
     const handleFormSubmit = (data) => {
 
         document.body.classList.add('overflow-hidden');
-        setFormComplete(false);
+        setFormComplete(true);
+        basket.setBasket([]);
+        localStorage.removeItem('basketItems'); 
+        
 
     };
 

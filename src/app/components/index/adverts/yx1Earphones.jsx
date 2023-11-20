@@ -15,7 +15,7 @@ export default function Yx1Earphones(){
                     <h3 className='manrope-title text-[1.75rem] font-bold'>YX1 EARPHONES</h3>
 
                     <OutlineButton
-                        href={'/'}
+                        href={'product/yx1-wireless-earphones'}
                         title={'SEE PRODUCT'}
                     />
 

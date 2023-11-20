@@ -15,7 +15,7 @@ export default function xx99MarkIiHeadphones(){
         <>
             <Layout>
 
-                <div className='max-w-[1440px] m-auto '>
+                <div className='max-w-[1440px] m-auto mb-[120px] sm:mb-[96px] lg:mb-[200px]'>
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
                         <div className="mt-[16px] mb-[16px] sm:mt-[33px] sm:mb-[33px] lg:mt-[79px] lg:mb-[56px]">
@@ -101,7 +101,7 @@ export default function xx99MarkIiHeadphones(){
                                         tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
                                         productTitle={'XX99 MARK I'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx9-mark-i-headphones'}
                                     />
 
                                 </div>    
@@ -113,7 +113,7 @@ export default function xx99MarkIiHeadphones(){
                                         tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
                                         productTitle={'XX59'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx59-headphones'}
                                     />
 
                                 </div>
@@ -125,7 +125,7 @@ export default function xx99MarkIiHeadphones(){
                                         tabletImage={'/assets/shared/tablet/image-zx9-speaker.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-zx9-speaker.jpg'}
                                         productTitle={'ZX9 SPEAKER'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/zx9-speaker'}
                                     />
 
                                 </div>
