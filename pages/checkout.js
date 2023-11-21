@@ -37,9 +37,11 @@ export default function Checkout(){
         <>
             <Layout>
 
+
                 <OrderConfirmation
                     formComplete={formComplete}
                 />
+
 
 
                 <div className="bg-[#F2F2F2]">

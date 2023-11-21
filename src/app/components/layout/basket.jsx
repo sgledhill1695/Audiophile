@@ -2,8 +2,11 @@ import OrangeButton from "../reuseable/buttons/orangeButton";
 import { useState, useContext, useEffect, useRef } from "react";
 import { BasketContext } from "@/app/context/basketContext";
 import { useRouter } from "next/router";
+import currency from "currency.js";
 
 export default function Basket({openBasket, setOpenBasket}){
+
+    const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
 
     const router = useRouter();
 
@@ -20,7 +23,7 @@ export default function Basket({openBasket, setOpenBasket}){
 
             basket.map(b => {
 
-                var trimProduct = b.product.replace(/headphones/gi, '');
+                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
 
                 const itemInBasket = {
                     id: b.id,
@@ -103,8 +106,9 @@ export default function Basket({openBasket, setOpenBasket}){
                     basketTotal = basketTotal + item.price
                 };
             };
+
             
-            setTotal(basketTotal)
+            setTotal(POUND(basketTotal).format());
 
         });
 
@@ -196,7 +200,7 @@ export default function Basket({openBasket, setOpenBasket}){
     const closeMain = {
         visibility: "hidden",
         opacity: 0,
-        transition: "visibility 0s, background-color 0.2s ease-out"
+        transition: "opacity 0.5s ease-out, visibility 0s 0.6s"
     };
 
     const openBask = {
@@ -206,7 +210,7 @@ export default function Basket({openBasket, setOpenBasket}){
 
     const closeBask = {
         opacity: "0",
-        transition: "opacity 0.2s",
+        transition: "opacity 0.5s ease-out"
     };
 
 
@@ -214,7 +218,7 @@ export default function Basket({openBasket, setOpenBasket}){
 
     return(
         <>
-            <div className={`fixed h-[100%] w-[100%]  overflow-hidden z-50`} style={openBasket ? openMain : closeMain}>
+            <div className={`fixed  h-[calc(100vh-90px)] w-[100%] z-50 overflow-y-auto`} style={openBasket ? openMain : closeMain}>
 
                 <div className='max-w-[1440px] m-auto'>
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
@@ -237,7 +241,7 @@ export default function Basket({openBasket, setOpenBasket}){
                                     
                                             <ul>
                                                 {itemsInBasket.map(item => (
-                                                    <li className="flex justify-between mb-[24px] items-center">
+                                                    <li className="flex justify-between mb-[24px] items-center gap-[10px]">
                                                     
                                                         <div className="flex gap-[16px] items-center">
                                                             <img src={item.productImage} className="w-[64px] rounded-[8px]" />

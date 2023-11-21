@@ -25,7 +25,7 @@ export default function checkoutSummary(){
     
             basket.map(b => {
     
-                var trimProduct = b.product.replace(/headphones/gi, '');
+                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
     
                 const itemInBasket = {
                     id: b.id,

@@ -100,7 +100,7 @@ export default function yx1WirelessEarphones() {
                                         tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
                                         productTitle={'XX99 MARK I'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx9-mark-i-headphones'}
                                     />
 
                                 </div>
@@ -112,7 +112,7 @@ export default function yx1WirelessEarphones() {
                                         tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
                                         productTitle={'XX59'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx59-headphones'}
                                     />
 
                                 </div>
@@ -124,7 +124,7 @@ export default function yx1WirelessEarphones() {
                                         tabletImage={'/assets/shared/tablet/image-zx9-speaker.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-zx9-speaker.jpg'}
                                         productTitle={'ZX9 SPEAKER'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/zx9-speaker'}
                                     />
 
                                 </div>

@@ -25,7 +25,7 @@ export default function xx59Headphones() {
                         <div>
                             <ProductDetail
                                 desktopImage={'/assets/product-xx59-headphones/desktop/image-product.jpg'}
-                                tabletImage={'/assets/product-xx59headphones/tablet/image-product.jpg'}
+                                tabletImage={'/assets/product-xx59-headphones/tablet/image-product.jpg'}
                                 newProduct={false}
                                 title={'XX59 HEADPHONES'}
                                 description={'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'}

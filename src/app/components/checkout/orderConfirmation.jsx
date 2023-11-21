@@ -36,7 +36,7 @@ export default function OrderConfirmation({formComplete}){
 
             basket.map(b => {
 
-                var trimProduct = b.product.replace(/headphones/gi, '');
+                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
 
                 const itemInBasket = {
                     id: b.id,
@@ -137,7 +137,7 @@ export default function OrderConfirmation({formComplete}){
     
 
     return(
-        <div className={`${formComplete ? 'block' : 'hidden'} fixed top-0 h-[100%] w-[100%] bg-[#00000071] overflow-hidden z-50 flex justify-center`}>
+        <div className={`${formComplete ? 'block' : 'hidden'} h-[100%] fixed top-0 w-[100%] bg-[#00000071] z-50 flex justify-center overflow-scroll`}>
 
             <div className='max-w-[1440px] m-auto'>
                 <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px] ">
@@ -191,18 +191,18 @@ export default function OrderConfirmation({formComplete}){
                                     <div className="pt-[16px] max-h-[0px]" style={open ? openList : closeList}>
                                         {otherItems.map(item => (
 
-                                            <div className="flex justify-between ">
+                                            <div className="flex  gap-[20px]">
 
-                                                <img src={item.productImage}  className="max-w-[50px]"/>
-        
-                                                <div className="flex flex-col items-start pe-[50px] sm:pe-[10px]">
-        
-                                                    <p className="font-bold text-[0.9rem]">{item.product}</p>
-        
+                                                <img src={item.productImage} className="max-w-[50px]" />
+
+                                                <div className="flex flex-col items-start pe-[50px]">
+
+                                                    <p className="font-bold text-start text-[0.9rem]">{item.product}</p>
+
                                                     <p className="text-[0.87rem] font-bold opacity-50">{item.price}</p>
-        
+
                                                 </div>
-        
+
                                                 <div className="opacity-50 text-[0.93rem] font-bold">x{item.quantity}</div>
 
                                             </div>
@@ -211,16 +211,21 @@ export default function OrderConfirmation({formComplete}){
 
                                 </div>
 
-                                {otherItems.length > 0 && open ? (
 
-                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">View less</p>
-                            
-                                ) : (
 
-                                    <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">and {otherItems.length} other item(s)</p>
- 
+                                {otherItems.length > 0 && (
+                                    <>
+                                        {open ? (
+                                            <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">
+                                                View less
+                                            </p>
+                                        ) : (
+                                            <p onClick={() => handleOpen()} className="text-[0.75rem] opacity-50 flex justify-center pt-4 cursor-pointer">
+                                                and {otherItems.length} other item(s)
+                                            </p>
+                                        )}
+                                    </>
                                 )}
-
                             </div>
 
 

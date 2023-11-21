@@ -8,7 +8,6 @@ import YouMayAlsoLike from "@/app/components/reuseable/youMayAlsoLike";
 import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 
-
 export default function zx9Speakers() {
 
     return (
@@ -27,17 +26,11 @@ export default function zx9Speakers() {
                                 desktopImage={'/assets/product-zx9-speaker/desktop/image-product.jpg'}
                                 tabletImage={'/assets/product-zx9-speaker/tablet/image-product.jpg'}
                                 newProduct={true}
-                                title={
-                                    <>
-                                        <p>ZX9</p>
-                                        <p>SPEAKER</p>
-                                    </>
-                                }
+                                title="ZX9 SPEAKER"
                                 description={'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'}
                                 href={'/'}
                                 productPrice={4500}
                                 id={6}
-
                             />
                         </div>
 
@@ -106,7 +99,7 @@ export default function zx9Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-zx7-speaker.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-zx7-speaker.jpg'}
                                         productTitle={'ZX7 SPEAKER'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/zx7-speaker'}
                                     />
 
                                 </div>
@@ -118,7 +111,7 @@ export default function zx9Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
                                         productTitle={'XX99 MARK I'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx9-mark-i-headphones'}
                                     />
 
                                 </div>
@@ -130,11 +123,10 @@ export default function zx9Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
                                         productTitle={'XX59'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx59-headphones'}
                                     />
 
                                 </div>
-
 
                             </div>
 
@@ -142,16 +134,7 @@ export default function zx9Speakers() {
 
                             <BestAudioGear />
 
-
-
-
-
                         </div>
-
-
-
-
-
 
                     </div>
                 </div>

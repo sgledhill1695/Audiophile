@@ -27,12 +27,7 @@ export default function zx7Speakers() {
                                 desktopImage={'/assets/product-zx7-speaker/desktop/image-product.jpg'}
                                 tabletImage={'/assets/product-zx7-speaker/tablet/image-product.jpg'}
                                 newProduct={false}
-                                title={
-                                    <>
-                                        <p>ZX7</p>
-                                        <p>SPEAKER</p>
-                                    </>
-                                }
+                                title="ZX7 SPEAKER"
                                 description={'Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.'}
                                 href={'/'}
                                 productPrice={3500}
@@ -106,7 +101,7 @@ export default function zx7Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-zx9-speaker.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-zx9-speaker.jpg'}
                                         productTitle={'ZX9 SPEAKER'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/zx9-speaker'}
                                     />
 
                                 </div>
@@ -118,7 +113,7 @@ export default function zx7Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-xx99-mark-one-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx99-mark-one-headphones.jpg'}
                                         productTitle={'XX99 MARK I'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx9-mark-i-headphones'}
                                     />
 
                                 </div>
@@ -130,7 +125,7 @@ export default function zx7Speakers() {
                                         tabletImage={'/assets/shared/tablet/image-xx59-headphones.jpg'}
                                         desktopImage={'/assets/shared/desktop/image-xx59-headphones.jpg'}
                                         productTitle={'XX59'}
-                                        productUrl={'/'}
+                                        productUrl={'/product/xx59-headphones'}
                                     />
 
                                 </div>
