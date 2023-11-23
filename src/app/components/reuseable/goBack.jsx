@@ -1,10 +1,12 @@
-export default function goBack(){
+import Link from "next/link";
+
+export default function goBack({link}){
 
     return(
         <>
-
-            <p className="text-[0.93rem] text-[#000] opacity-50">Go Back</p>
-        
+            <Link href={{link}}>
+                <p className="text-[0.93rem] text-[#000] opacity-50">Go Back</p>
+            </Link>
         </>
     )
 }

@@ -171,17 +171,23 @@ export default function OrderConfirmation({formComplete}){
                                         {featuredItem.map(item => (
                                             <>
 
-                                                <img src={item.productImage}  className="max-w-[50px]"/>
-        
-                                                <div className="flex flex-col items-start pe-[50px] sm:pe-[10px]">
-        
-                                                    <p className="font-bold text-[0.9rem]">{item.product}</p>
-        
-                                                    <p className="text-[0.87rem] font-bold opacity-50">{item.price}</p>
-        
+                                                <div className="flex gap-[8px]">
+
+                                                    <img src={item.productImage}  className="max-w-[50px]"/>
+                                            
+                                                    <div className="flex flex-col items-start pe-[50px] sm:pe-[10px]">
+                                            
+                                                        <p className="font-bold text-[0.9rem]">{item.product}</p>
+                                            
+                                                        <p className="text-[0.87rem] font-bold opacity-50">£{POUND(item.price).format()}</p>
+                                            
+                                                    </div>
+
                                                 </div>
+
         
                                                 <div className="opacity-50 text-[0.93rem] font-bold">x{item.quantity}</div>
+
 
                                             </>
 
@@ -191,17 +197,22 @@ export default function OrderConfirmation({formComplete}){
                                     <div className="pt-[16px] max-h-[0px]" style={open ? openList : closeList}>
                                         {otherItems.map(item => (
 
-                                            <div className="flex  gap-[20px]">
+                                            <div className="flex justify-between">
 
-                                                <img src={item.productImage} className="max-w-[50px]" />
+                                                <div className="flex gap-[8px]">
 
-                                                <div className="flex flex-col items-start pe-[50px]">
-
-                                                    <p className="font-bold text-start text-[0.9rem]">{item.product}</p>
-
-                                                    <p className="text-[0.87rem] font-bold opacity-50">{item.price}</p>
+                                                    <img src={item.productImage} className="max-w-[50px]" />
+    
+                                                    <div className="flex flex-col items-start pe-[50px]">
+    
+                                                        <p className="font-bold text-start text-[0.9rem]">{item.product}</p>
+    
+                                                        <p className="text-[0.87rem] font-bold opacity-50">£{POUND(item.price).format()}</p>
+    
+                                                    </div>
 
                                                 </div>
+
 
                                                 <div className="opacity-50 text-[0.93rem] font-bold">x{item.quantity}</div>
 

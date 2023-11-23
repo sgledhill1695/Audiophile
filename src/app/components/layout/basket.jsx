@@ -62,13 +62,12 @@ export default function Basket({openBasket, setOpenBasket}){
 
                 if(item.quantity > 1){
 
-                    item.quantity = item.quantity - 1
+                    item.quantity = item.quantity - 1;
 
                 };
             };
         });
 
-        setItemsInBasket(basketItems);
     };
 
 
@@ -86,6 +85,7 @@ export default function Basket({openBasket, setOpenBasket}){
         });
 
         setItemsInBasket(basketItems);
+
     }
 
 
@@ -159,14 +159,6 @@ export default function Basket({openBasket, setOpenBasket}){
 
         };    
     };
-
-
-
-
-
-
-
-
 
     //Handle closing the basket depending on where the user clicks
     const basketRef = useRef(null);

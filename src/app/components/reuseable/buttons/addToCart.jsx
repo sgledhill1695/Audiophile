@@ -1,8 +1,11 @@
 import { useContext, useState, useEffect } from "react";
 import { BasketContext } from "@/app/context/basketContext";
+import { NotificationContext } from "@/app/context/notificationContext";
 
 
 export default function addToCart({title, productPrice, image, id}){
+
+    const { displayed, setDisplayed } = useContext(NotificationContext);
 
     const basket = useContext(BasketContext);
 
@@ -12,10 +15,13 @@ export default function addToCart({title, productPrice, image, id}){
 
         let productsToAdd = [];
 
-        //If any items already in basket add to new array
-        if(basket.basket.length > 0){
+        const itemsRetrievedFromLocalStorage = JSON.parse(localStorage.getItem("basketItems"));
 
-            basket.basket.map(basket => {
+
+        //If any items already in basket add to new array
+        if(itemsRetrievedFromLocalStorage.length > 0){
+
+            itemsRetrievedFromLocalStorage.map(basket => {
 
                 productsToAdd.push(basket);
 
@@ -41,7 +47,13 @@ export default function addToCart({title, productPrice, image, id}){
         localStorage.setItem("basketItems", JSON.stringify(productsToAdd));
 
         basket.setBasket(productsToAdd);
-    }
+
+        setDisplayed(true);
+
+    };
+
+
+
 
     const handleDecrease = () => {
 

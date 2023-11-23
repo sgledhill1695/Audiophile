@@ -71,3 +71,13 @@ body{
   color: #D87D4A;
   opacity: 1;
 }
+
+.close-notification{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  transition-delay: 0.1s;}
+
+.open-notification{
+  opacity: 1;
+}

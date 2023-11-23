@@ -7,6 +7,7 @@ import ProductGallery from "@/app/components/products/productGallery";
 import YouMayAlsoLike from "@/app/components/reuseable/youMayAlsoLike";
 import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
+import Link from "next/link";
 
 
 export default function xx99MarkIHeadphones() {
@@ -19,7 +20,7 @@ export default function xx99MarkIHeadphones() {
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
                         <div className="mt-[16px] mb-[16px] sm:mt-[33px] sm:mb-[33px] lg:mt-[79px] lg:mb-[56px]">
-                            <GoBack />
+                            <Link href="/category/headphones" className="text-[0.93rem] text-[#000] opacity-50">Go Back</Link>
                         </div>
 
                         <div>

@@ -1,7 +1,9 @@
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Basket from "./basket";
-import { useState } from "react";
+import { NotificationContext } from "@/app/context/notificationContext";
+import Notification from "../reuseable/notification";
+import { useState, useContext } from "react";
 
 export default function Layout({children}) {
 
@@ -12,6 +14,8 @@ export default function Layout({children}) {
         openBasket ? setOpenBasket(false) : setOpenBasket(true);
     }
 
+    const {displayed} = useContext(NotificationContext);
+
 
     return(
         <>
@@ -21,6 +25,10 @@ export default function Layout({children}) {
                     setOpenBasket={setOpenBasket}
                     openBasket={openBasket}
                 />
+
+
+                <Notification/>
+
     
                     {children}
 

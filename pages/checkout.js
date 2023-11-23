@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useState, useContext } from "react";
 import OrderConfirmation from "@/app/components/checkout/orderConfirmation";
 import { BasketContext } from "@/app/context/basketContext";
+import Link from "next/link";
 
 
 
@@ -51,7 +52,7 @@ export default function Checkout(){
                         <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
                             
                             <div className="pt-[16px] sm:pt-[48px] lg:pt-[80px]">
-                                <GoBack />
+                                <Link href="/" className="text-[0.93rem] text-[#000] opacity-50">Go Back</Link>
                             </div>
 
                             <form onSubmit={handleSubmit(handleFormSubmit)}>
