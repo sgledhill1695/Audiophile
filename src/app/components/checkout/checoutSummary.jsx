@@ -17,44 +17,6 @@ export default function checkoutSummary(){
     const [vatTotal , setVatTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
 
-    useEffect(() => {
-
-        if(basket.length > 0 ){
-
-            const itemsInLocalStorage = [];
-    
-            basket.map(b => {
-    
-                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
-    
-                const itemInBasket = {
-                    id: b.id,
-                    product: trimProduct,
-                    price: b.price,
-                    productImage: b.productImage,
-                    quantity: 1
-                };
-    
-                const existingItem = itemsInLocalStorage.find(item => item.id === b.id);
-    
-                if (existingItem) {
-
-                    existingItem.quantity++;
-
-                } else {
-
-                    itemsInLocalStorage.push(itemInBasket);
-
-                };
-            });
-    
-            setItemsInBasket(itemsInLocalStorage);
-
-        };
-
-
-    }, [basket]);
-
 
     //Calculate checkout totals
     useEffect(() => {
@@ -65,7 +27,7 @@ export default function checkoutSummary(){
 
         const vatSubtract = 80;
 
-        itemsInBasket.map(item => {
+        basket.items.map(item => {
 
 
             if (item.quantity <= 1) {
@@ -77,9 +39,11 @@ export default function checkoutSummary(){
 
                 vatAmount = vatTotal + vat;
 
+                console.log(vatAmount);
+
             } else if (item.quantity > 1) {
 
-
+                
                 for (let i = 0; i < item.quantity; i++) {
 
                     basketTotal = basketTotal + item.price;
@@ -100,7 +64,7 @@ export default function checkoutSummary(){
         });
 
 
-    }, [itemsInBasket])
+    }, [basket])
 
 
     return(
@@ -110,7 +74,7 @@ export default function checkoutSummary(){
                 <h5 className="font-bold tracking-[1.2px]">SUMMARY</h5>
 
                 <ul className="flex flex-col gap-[24px] pt-[31px]">
-                    {itemsInBasket.map(item => (
+                    {basket.items.map(item => (
                         <li key={item.id}>
 
                             <div className="flex justify-between items-center">
@@ -138,7 +102,7 @@ export default function checkoutSummary(){
 
                     <div className="flex justify-between ">
                         <p className="opacity-50 text-[0.93rem]">TOTAL</p>
-                        <p className="text-[1.12rem] font-bold">£{total}</p>
+                        <p className="text-[1.12rem] font-bold">£{basket.total}</p>
                     </div>
 
 

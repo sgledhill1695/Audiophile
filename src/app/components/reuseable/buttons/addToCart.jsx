@@ -1,52 +1,135 @@
 import { useContext, useState, useEffect } from "react";
 import { BasketContext } from "@/app/context/basketContext";
 import { NotificationContext } from "@/app/context/notificationContext";
+import currency from "currency.js";
 
 
 export default function addToCart({title, productPrice, image, id}){
 
     const { displayed, setDisplayed } = useContext(NotificationContext);
 
-    const basket = useContext(BasketContext);
+    const {basket, setBasket} = useContext(BasketContext);
 
     let [quantity, setQuantity] = useState(1);
 
     const handleAddToBasket = (id) => {
 
-        let productsToAdd = [];
+        const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+
+
+        let productsToAddToLocal = [];
 
         const itemsRetrievedFromLocalStorage = JSON.parse(localStorage.getItem("basketItems"));
 
 
-        //If any items already in basket add to new array
-        if(itemsRetrievedFromLocalStorage.length > 0){
+        if(itemsRetrievedFromLocalStorage){
 
-            itemsRetrievedFromLocalStorage.map(basket => {
+            const itemsToAdd = [...itemsRetrievedFromLocalStorage];
 
-                productsToAdd.push(basket);
-
-            });
-        }
-
-        //Loop through qunaity added
-        for(let i = 0; i < quantity; i++){
-
-            productsToAdd.push({
-
+            const itemForLocal = {
                 id: id,
                 product: title,
                 price: productPrice,
-                productImage: image
+                productImage: image,
+            };
+
+
+
+            for (let i = 0; i < quantity; i++) {
+                itemsToAdd.push(itemForLocal);
+            };
+
+            localStorage.setItem("basketItems", JSON.stringify(itemsToAdd));
+
+
+            const newState = [];
+
+            itemsToAdd.map(localItem => {
+
+                var trimTitle = localItem.product.replace(/headphones|speaker|wireless earphones/gi, '');
+
+
+                const itemInBasket = {
+                    id: localItem.id,
+                    product: trimTitle,
+                    price: localItem.price,
+                    productImage: localItem.productImage,
+                    quantity: 1
+                };
+
+
+                const existingItem = newState.find(item => item.id === localItem.id);
+
+                if(existingItem){
+                    existingItem.quantity++;
+                } else {
+                    newState.push(itemInBasket);
+                }
 
             });
 
+            let total = 0;
+            let totalItems = 0;
+
+            newState.map(item => {
+
+                for (let i = 0; i < item.quantity; i++) {
+
+                    total = currency(total).add(item.price)
+                    totalItems = totalItems + 1;
+
+                };
+            });
+
+            setBasket({
+                items: newState,
+                total: POUND(total).format(),
+                totalItems: totalItems
+            });
+
+
+        } else {
+
+           
+            const itemsToAdd = [];
+
+            const itemForLocal = {
+                id: id,
+                product: title.replace(/headphones|speaker|wireless earphones/gi, ''),
+                price: productPrice,
+                productImage: image,
+                quantity: quantity
+            };
+
+            for (let i = 0; i < quantity; i++) {
+
+                itemsToAdd.push(itemForLocal);
+
+            };
+
+            localStorage.setItem("basketItems", JSON.stringify(itemsToAdd));
+
+
+            let total = 0;
+            let totalItems = 0;
+
+            itemsToAdd.map(item => {
+
+                for (let i = 0; i < item.quantity; i++) {
+
+                    total = currency(total).add(item.price)
+                    totalItems = totalItems + 1;
+
+                };
+            });
+
+            setBasket({
+                items: itemsToAdd,
+                total: POUND(total).format(),
+                totalItems: totalItems
+            });
+
         }
-
-        setQuantity(1);
-
-        localStorage.setItem("basketItems", JSON.stringify(productsToAdd));
-
-        basket.setBasket(productsToAdd);
 
         setDisplayed(true);
 

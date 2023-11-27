@@ -4,9 +4,10 @@ import { BasketContext } from "@/app/context/basketContext";
 import { useRouter } from "next/router";
 import currency from "currency.js";
 
+
 export default function Basket({openBasket, setOpenBasket}){
 
-    const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',' });
 
     const router = useRouter();
 
@@ -15,78 +16,113 @@ export default function Basket({openBasket, setOpenBasket}){
     const [itemsInBasket, setItemsInBasket] = useState([]);
     const [total, setTotal] = useState(0);
 
-    useEffect(() => {
 
-        if(basket.length > 0) {
-
-            const itemsInLocalStorage = [];
-
-            basket.map(b => {
-
-                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
-
-                const itemInBasket = {
-                    id: b.id,
-                    product: trimProduct,
-                    price: b.price,
-                    productImage: b.productImage,
-                    quantity: 1
-                };
-
-                const existingItem = itemsInLocalStorage.find(item => item.id === b.id);
-
-                if (existingItem) {
-                    existingItem.quantity++;
-                } else {
-                    itemsInLocalStorage.push(itemInBasket);
-                }
-            });
-
-            //console.log(itemsInLocalStorage)
-            setItemsInBasket(itemsInLocalStorage);
-
-        };
-
-    },[basket]);
 
 
 
 
     const handleDecrease = (id) => {
 
-        const basketItems = [...itemsInBasket];
+        const itemsInBasket = [...basket.items];
+        const itemsInLocalStorage = JSON.parse(localStorage.getItem("basketItems"));
 
-        basketItems.map(item => {
+        itemsInBasket.map(item => {
 
-            if(item.id ===  id){
+            if(item.id === id){
 
                 if(item.quantity > 1){
 
                     item.quantity = item.quantity - 1;
 
+                    const indexToRemove = itemsInLocalStorage.findIndex(item => {
+                        return item.id === id;
+                    });
+
+                    itemsInLocalStorage.splice(indexToRemove, 1);
+
+                    localStorage.setItem("basketItems", JSON.stringify(itemsInLocalStorage));
+
+
                 };
             };
+
         });
+
+        let total = 0;
+        let totalItems = 0;
+
+        itemsInBasket.map(item => {
+
+            for (let i = 0; i < item.quantity; i++) {
+
+                total = currency(total).add(item.price)
+                totalItems = totalItems + 1;
+
+            };
+        });
+
+
+        setBasket({
+            items: itemsInBasket,
+            total: POUND(total).format(),
+            totalItems: totalItems
+
+        });
+
 
     };
 
 
     const handleIncrease = (id) => {
 
-        const basketItems = [...itemsInBasket];
+        const itemsInBasket = [...basket.items];
+        const itemsInLocalStorage = JSON.parse(localStorage.getItem("basketItems"));
 
-        basketItems.map(item => {
+
+        itemsInBasket.map(item => {
 
             if (item.id === id) {
 
                 item.quantity = item.quantity + 1;
 
+                const itemsToAddToLocalStorage = [...itemsInLocalStorage];
+
+                const newItem = {
+                    id: item.id,
+                    product: item.product,
+                    price: item.price,
+                    productImage: item.productImage,
+                };
+
+                itemsToAddToLocalStorage.push(newItem);
+
+                localStorage.setItem("basketItems", JSON.stringify(itemsToAddToLocalStorage));
+
             };
         });
 
-        setItemsInBasket(basketItems);
+        let total = 0;
+        let totalItems = 0;
 
-    }
+        itemsInBasket.map(item => {
+
+            for (let i = 0; i < item.quantity; i++) {
+
+                total = currency(total).add(item.price)
+                totalItems = totalItems + 1;
+
+            };
+        });
+
+
+        setBasket({
+            items: itemsInBasket,
+            total: POUND(total).format(),
+            totalItems: totalItems
+        });
+
+
+    };
 
 
     //Calculate basket total
@@ -118,35 +154,17 @@ export default function Basket({openBasket, setOpenBasket}){
     const handleRemoveAll = () => {
 
         localStorage.removeItem('basketItems');
-        setBasket([]);
+        setBasket({
+            items:[],
+            total: 0,
+            totalItems: 0,
+        });
         setItemsInBasket([]);
         setTotal(0);
     };
 
     const handleCheckout = () => {
 
-        const itemsForLocalStorage = [];
-
-        itemsInBasket.map(basketItem => {
-
-            for(let i = 0; i < basketItem.quantity; i++ ){
-
-                const itemToAddToLocalStorage = {
-                    id: basketItem.id,
-                    product: basketItem.product,
-                    price: basketItem.price,
-                    productImage: basketItem.productImage
-                };
-
-                itemsForLocalStorage.push(itemToAddToLocalStorage);
-               
-            };
-
-
-        });
-
-        localStorage.removeItem("basketItems");
-        localStorage.setItem("basketItems", JSON.stringify(itemsForLocalStorage));
         document.body.classList.remove('overflow-hidden');
 
         if (router.pathname === '/checkout') {
@@ -219,11 +237,11 @@ export default function Basket({openBasket, setOpenBasket}){
 
                             <div className="bg-[white] w-[100%] sm:w-[377px] absolute right-0 top-5 flex flex-col p-[32px] rounded-[8px]" ref={basketRef} style={openBasket ? openBask : closeBask}>
 
-                                {basket.length > 0 ? (
+                                {basket.items.length > 0 ? (
                                     <>
                                     
                                         <div className="flex justify-between">
-                                            <p className="text-[#000] text-[1.12rem] tracking-[1.2px] font-bold">CART({basket.length})</p>
+                                            <p className="text-[#000] text-[1.12rem] tracking-[1.2px] font-bold">CART({basket.totalItems})</p>
                                     
                                             <button onClick={() => handleRemoveAll()} className="font-bold opacity-50 text-[0.93rem] underline hover:text-[#D87D4A]">Remove all</button>
                                     
@@ -232,7 +250,7 @@ export default function Basket({openBasket, setOpenBasket}){
                                         <div className="mt-[31px]">
                                     
                                             <ul>
-                                                {itemsInBasket.map(item => (
+                                                {basket.items.map(item => (
                                                     <li className="flex justify-between mb-[24px] items-center gap-[10px]">
                                                     
                                                         <div className="flex gap-[16px] items-center">
@@ -273,7 +291,7 @@ export default function Basket({openBasket, setOpenBasket}){
                                                 
                                             <p className=" text-[0.93rem] font-bold opacity-50">TOTAL</p>
                                                 
-                                            <p className="text-[1.12rem] font-bold">£ {total}</p>
+                                            <p className="text-[1.12rem] font-bold">£ {basket.total}</p>
                                                 
                                         </div>
                                                 

@@ -18,9 +18,6 @@ export default function OrderConfirmation({formComplete}){
 
     };
 
-    useEffect(() => {
-        console.log(open)
-    }, [open])
 
     const {basket} = useContext(BasketContext);
 
@@ -30,47 +27,23 @@ export default function OrderConfirmation({formComplete}){
 
     useEffect(() => {
 
-        if (basket.length > 0) {
 
-            const itemsInLocalStorage = [];
+        if (basket.items.length > 0) {
 
-            basket.map(b => {
+            setFeaturedItem([basket.items[0]]);
 
-                var trimProduct = b.product.replace(/headphones|speaker|wireless earphones/gi, '');
+            if (basket.items.length > 1) {
 
-                const itemInBasket = {
-                    id: b.id,
-                    product: trimProduct,
-                    price: b.price,
-                    productImage: b.productImage,
-                    quantity: 1
-                };
+                setOtherItems(basket.items.slice(1));
 
-                const existingItem = itemsInLocalStorage.find(item => item.id === b.id);
-
-                if (existingItem) {
-
-                    existingItem.quantity++;
-
-                } else {
-
-                    itemsInLocalStorage.push(itemInBasket);
-
-                };
-            });
-
-
-            setItemsInBasket(itemsInLocalStorage);
-            setFeaturedItem([itemsInLocalStorage[0]]);
-
-            if(itemsInLocalStorage.length > 1){
-                setOtherItems(itemsInLocalStorage.slice(1));
             };
 
         };
 
 
-    }, [basket]);
+    }, [basket.items]);
+
+
 
 
     //Calculate checkout totals
@@ -83,7 +56,7 @@ export default function OrderConfirmation({formComplete}){
 
         const vatSubtract = 80;
 
-        itemsInBasket.map(item => {
+        basket.items.map(item => {
 
 
             if (item.quantity <= 1) {
@@ -117,7 +90,7 @@ export default function OrderConfirmation({formComplete}){
 
 
     }, [itemsInBasket])
-
+ 
 
 
     const closeList = {
@@ -255,11 +228,11 @@ export default function OrderConfirmation({formComplete}){
                         </div>
 
 
-                        <Link href="/">
+                        <a href="/">
                              <button type="submit" className="bg-[#D87D4A] hover:bg-[#FBAF85] py-[15px] text-[white] w-[100%] mt-[47px] text-[0.81rem] font-bold tracking-[1px]">
                                  BACK TO HOME
                              </button>
-                        </Link>
+                        </a>
 
 
                     </div>

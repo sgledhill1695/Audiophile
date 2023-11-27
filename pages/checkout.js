@@ -26,9 +26,7 @@ export default function Checkout(){
 
         document.body.classList.add('overflow-hidden');
         setFormComplete(true);
-        basket.setBasket([]);
         localStorage.removeItem('basketItems'); 
-        
 
     };
 
