@@ -3,6 +3,8 @@ import Logo from './logo';
 import Link from 'next/link';
 import BasketIcon from './basketIcon';
 import HamburgerIcon from './hamburgerIcon';
+import ShopCategory from '../reuseable/categories/shopCategory';
+import { useState } from 'react';
 
 
 export default function Navbar({handleOpenBasket}){
@@ -13,6 +15,15 @@ export default function Navbar({handleOpenBasket}){
         {title: 'SPEAKERS', href: '/category/speakers' },
         {title: 'EARPHONES', href: '/category/earphones' },
     ];
+
+    const [open, setOpen] = useState(false);
+
+    const handleHamburgerMenu = () => {
+
+        open ? setOpen(false) : setOpen(true);
+
+    };
+
 
 
     return(
@@ -29,7 +40,9 @@ export default function Navbar({handleOpenBasket}){
         
                             <div className='flex items-center sm:gap-[42px] lg:hidden'>
             
-                                <HamburgerIcon />
+                                <HamburgerIcon
+                                    handleHamburgerMenu={handleHamburgerMenu}
+                                />
                 
                                 <div className='hidden sm:flex xl:hidden'>
                                     <Logo />
@@ -67,6 +80,21 @@ export default function Navbar({handleOpenBasket}){
             </div>
 
         </div>
+
+            <nav className={`${open ? 'open-small-nav' : 'close-small-nav' }`}>
+
+                <div className='lg:hidden bg-[white] mb-[67px]'>
+    
+                        <div className='max-w-[1440px] m-auto'>
+                            <div className='ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px] pt-[35px] '>
+                                <ShopCategory />
+                            </div>
+                        </div>
+                      
+                </div>
+
+            </nav>
+
 
         </>
     )

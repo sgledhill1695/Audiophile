@@ -81,3 +81,15 @@ body{
 .open-notification{
   opacity: 1;
 }
+
+.open-small-nav{
+  visibility: visible;
+  max-height: 1000px;
+  transition: max-height 0.5s;
+}
+
+.close-small-nav{
+  max-height: 0px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}

@@ -7,7 +7,7 @@ export const BasketContext = createContext([]);
 
 export function BasketProvider({children}){
 
-    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',' });
+    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',', precision: 0 });
 
 
     const [basket, setBasket] = useState({
@@ -81,7 +81,10 @@ export function BasketProvider({children}){
 
             setBasket({
                 items: itemsForBasket,
-                total: POUND(total).format(),
+                total: POUND(total).format({
+                    pattern: `#`,
+                    precision: 0,
+                }),
                 totalItems: totalItems
             });
 

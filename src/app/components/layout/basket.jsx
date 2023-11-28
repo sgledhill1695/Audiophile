@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 import currency from "currency.js";
 
 
-export default function Basket({openBasket, setOpenBasket}){
+export default function Basket({openBasket, setOpenBasket, handleOpenBasket }){
 
-    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',' });
+    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',', precision: 0 });
 
     const router = useRouter();
 
@@ -187,11 +187,14 @@ export default function Basket({openBasket, setOpenBasket}){
 
             if(basketRef.current){
 
-                if (!basketRef.current.contains(e.target)) {
+                if (
+                    !basketRef.current.contains(e.target) &&
+                    e.target.tagName !== 'svg' && // Check if the target is an SVG element
+                    !basketRef.current.contains(e.target.closest('svg'))
+                ) {
                     setOpenBasket(false);
                     document.body.classList.remove('overflow-hidden');
                 }
-
             }
 
         };

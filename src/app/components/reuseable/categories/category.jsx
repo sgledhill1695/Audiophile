@@ -7,9 +7,9 @@ export default function Category({imageSource, url, title}){
     return(
         <>
 
-            <Link href={url}>
+            <Link href={url} className="grow shrink  w-[100%]">
 
-                <button className={`${styles.category} bg-[#F1F1F1] w-[327px] md:w-[223px] md:min-w-[223px] lg:w-[350px] lg:max-w-[350px] h-[165px] flex flex-col items-center justify-end relative  rounded-[8px]`}>
+                <button className={`${styles.category} bg-[#F1F1F1] w-[100%] flex flex-col items-center justify-end relative h-[165px]  rounded-[8px] grow shrink`}>
     
                     <img src={imageSource} className="absolute top-[-40px]" width="138px" ></img>
     

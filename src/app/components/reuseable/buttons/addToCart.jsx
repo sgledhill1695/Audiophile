@@ -14,7 +14,7 @@ export default function addToCart({title, productPrice, image, id}){
 
     const handleAddToBasket = (id) => {
 
-        const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+        const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',', precision: 0 });
 
 
         let productsToAddToLocal = [];

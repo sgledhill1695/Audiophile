@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function OrderConfirmation({formComplete}){
 
     //Set up formatting from currency.js
-    const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',', precision: 0 });
 
     const [open, setOpen] = useState(false);
 

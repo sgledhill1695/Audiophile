@@ -10,7 +10,7 @@ export default function checkoutSummary(){
     const { basket } = useContext(BasketContext);
 
     //Set up formatting from currency.js
-    const POUND = value => currency(value, { symbol: '', decimal: ',', separator: ',' });
+    const POUND = value => currency(value, { symbol: '', decimal: '.', separator: ',', precision: 0 });
 
     const [itemsInBasket, setItemsInBasket] = useState([]);
     const [total, setTotal] = useState(0);
