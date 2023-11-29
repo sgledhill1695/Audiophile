@@ -1,26 +1,23 @@
-export default function ProductGallery({mainImage, topLeftImage, bottomLeftImage}){
+export default function ProductGallery({image}){
+
+    console.log(image)
 
     return(
         <>
-            <div className="grid grid-rows-2 grid-cols-6">
+            <div className="grid grid-col-1 sm:grid-rows-2 sm:grid-cols-3 gap-[20px]">
 
-                <div className="col-span-2 row-span-1">
-                    <img className="rounded-[8px]" src="/assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"/>
+                <div className={`col-span-1 row-span-1 h-[175px] sm:h-auto bg-[url('/assets/${image}/desktop/image-gallery-1.jpg')] bg-no-repeat bg-center bg-cover rounded-[8px]`}>
                 </div>
 
-                <div className="col-span-3 row-span-2">
-                    <img className="rounded-[8px] h-[100%]" src="/assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg" />
-                </div>
-
-
-
-
-                <div className="col-span-2 row-span-1">
-                    <img className="rounded-[8px] w-[445px]" src="/assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"/>
+                <div className={`hidden sm:flex col-span-1 sm:col-span-2 row-span-2 h-[368px] sm:h-[592px] bg-[url('/assets/${image}/desktop/image-gallery-3.jpg')] bg-no-repeat bg-center bg-cover rounded-[8px]`}>
                 </div>
 
 
+                <div className={`col-span-1 h-[175px] sm:h-auto row-span-1 bg-[url('/assets/${image}/desktop/image-gallery-2.jpg')] bg-no-repeat bg-center bg-cover rounded-[8px]`}>
+                </div>
 
+                <div className={`sm:hidden col-span-1 sm:col-span-2 row-span-2 h-[368px] sm:h-[592px] bg-[url('/assets/${image}/desktop/image-gallery-3.jpg')] bg-no-repeat bg-center bg-cover rounded-[8px]`}>
+                </div>
 
             </div>
 

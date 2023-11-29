@@ -39,8 +39,6 @@ export default function checkoutSummary(){
 
                 vatAmount = vatTotal + vat;
 
-                console.log(vatAmount);
-
             } else if (item.quantity > 1) {
 
                 

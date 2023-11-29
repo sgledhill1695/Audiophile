@@ -115,7 +115,7 @@ export default function OrderConfirmation({formComplete}){
             <div className='max-w-[1440px] m-auto'>
                 <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px] ">
 
-                    <div className="max-w-[540px] lg:min-w-[540px] rounded-[8px] p-[48px] bg-[white]">
+                    <div className="sm:max-w-[600px] lg:min-w-[540px] rounded-[8px] p-[48px] bg-[white]">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
                             <circle cx="32" cy="32" r="32" fill="#D87D4A" />
@@ -136,19 +136,19 @@ export default function OrderConfirmation({formComplete}){
                            
                            
                            
-                            <div className="bg-[#F1F1F1] ps-[35px] pt-[33px] pe-[24px] pb-[25px] rounded-tl-[8px] rounded-tr-[8px] sm:rounded-tr-[0px] sm:rounded-bl-[8px] lg:w-[60%]">
+                            <div className="bg-[#F1F1F1] ps-[5px] sm:ps-[35px] pt-[33px] pe-[24px] pb-[25px] rounded-tl-[8px] rounded-tr-[8px] sm:rounded-tr-[0px] sm:rounded-bl-[8px] lg:w-[60%]">
 
                                 <div className="border-b-[1px] border-[#0000001b] ">
 
-                                    <div className="flex justify-between gap-[20px]">
+                                    <div className="flex justify-between gap-[10px]">
                                         {featuredItem.map(item => (
                                             <>
 
-                                                <div className="flex gap-[8px]">
+                                                <div className="flex gap-[3px]">
 
                                                     <img src={item.productImage}  className="max-w-[50px]"/>
                                             
-                                                    <div className="flex flex-col items-start pe-[50px] sm:pe-[10px]">
+                                                    <div className="flex flex-col items-start  sm:pe-[10px]">
                                             
                                                         <p className="font-bold text-[0.9rem]">{item.product}</p>
                                             
@@ -172,11 +172,11 @@ export default function OrderConfirmation({formComplete}){
 
                                             <div className="flex justify-between">
 
-                                                <div className="flex gap-[8px]">
+                                                <div className="flex gap-[3px]">
 
                                                     <img src={item.productImage} className="max-w-[50px]" />
     
-                                                    <div className="flex flex-col items-start pe-[50px]">
+                                                    <div className="flex flex-col items-start sm:pe-[10px]">
     
                                                         <p className="font-bold text-start text-[0.9rem]">{item.product}</p>
     
