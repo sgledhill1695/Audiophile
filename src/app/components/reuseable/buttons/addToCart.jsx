@@ -24,7 +24,7 @@ export default function addToCart({title, productPrice, image, id}){
 
         if(itemsRetrievedFromLocalStorage){
 
-            const itemsToAdd = [...itemsRetrievedFromLocalStorage];
+            const itemsForLocal = [...itemsRetrievedFromLocalStorage];
 
             const itemForLocal = {
                 id: id,
@@ -36,15 +36,15 @@ export default function addToCart({title, productPrice, image, id}){
 
 
             for (let i = 0; i < quantity; i++) {
-                itemsToAdd.push(itemForLocal);
+                itemsForLocal.push(itemForLocal);
             };
 
-            localStorage.setItem("basketItems", JSON.stringify(itemsToAdd));
+            localStorage.setItem("basketItems", JSON.stringify(itemsForLocal));
 
 
             const newState = [];
 
-            itemsToAdd.map(localItem => {
+            itemsForLocal.map(localItem => {
 
                 var trimTitle = localItem.product.replace(/headphones|speaker|wireless earphones/gi, '');
 
@@ -91,40 +91,50 @@ export default function addToCart({title, productPrice, image, id}){
         } else {
 
            
-            const itemsToAdd = [];
+            const itemsForLocal = [];
+            const itemsForState = [];
 
             const itemForLocal = {
                 id: id,
                 product: title.replace(/headphones|speaker|wireless earphones/gi, ''),
                 price: productPrice,
                 productImage: image,
-                quantity: quantity
             };
 
             for (let i = 0; i < quantity; i++) {
-
-                itemsToAdd.push(itemForLocal);
-
+                itemsForLocal.push(itemForLocal);
             };
 
-            localStorage.setItem("basketItems", JSON.stringify(itemsToAdd));
+            itemForLocal.quantity = 0
+
+
+            for (let i = 0; i < quantity; i++) {
+                itemForLocal.quantity++ 
+            };
+
+            console.log(itemForLocal);
+            console.log(itemsForLocal);
+
+            itemsForState.push(itemForLocal);
+
+            localStorage.setItem("basketItems", JSON.stringify(itemsForLocal));
 
 
             let total = 0;
             let totalItems = 0;
 
-            itemsToAdd.map(item => {
+            itemsForState.map(item => {
 
                 for (let i = 0; i < item.quantity; i++) {
 
-                    total = currency(total).add(item.price)
+                    total = currency(total).add(item.price);
                     totalItems = totalItems + 1;
 
                 };
             });
 
             setBasket({
-                items: itemsToAdd,
+                items: itemsForState,
                 total: POUND(total).format(),
                 totalItems: totalItems
             });

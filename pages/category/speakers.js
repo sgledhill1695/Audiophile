@@ -3,7 +3,6 @@ import PageHeader from "@/app/components/reuseable/pageHeader";
 import Product from "@/app/components/reuseable/product";
 import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
-import GoBack from "@/app/components/reuseable/goBack";
 
 export default function SpeakersCategory() {
 
@@ -18,11 +17,7 @@ export default function SpeakersCategory() {
                 <div className='max-w-[1440px] m-auto mb-[120px] sm:mb-[96px] lg:mb-[200px]'>
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
-                        <div className="sm:hidden mt-[16px] mb-[24px]">
-                            <GoBack/>
-                        </div>
-
-                        <div>
+                        <div className="mt-[16px] mb-[24px]">
                             <Product
                                 alignRight={false}
                                 image={'/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg'}

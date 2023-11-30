@@ -4,6 +4,7 @@ import Product from "@/app/components/reuseable/product";
 import ShopCategory from "@/app/components/reuseable/categories/shopCategory";
 import BestAudioGear from "@/app/components/reuseable/bestAudioGear";
 import GoBack from "@/app/components/reuseable/goBack";
+import Link from "next/link";
 
 export default function HeadphonesCategory(){
 
@@ -19,10 +20,9 @@ export default function HeadphonesCategory(){
                     <div className="ps-[24px] pe-[24px] md:ps-[5vw] md:pe-[5vw] lg:ps-[10vw] lg:pe-[10vw] xl:ps-[165px] xl:pe-[165px]">
 
                         <div className="sm:hidden mt-[16px] mb-[24px]">
-                            <GoBack />
                         </div>
 
-                        <div>
+                        <div className="mt-[16px] mb-[24px]">
                             <Product
                                 alignRight={false}
                                 image={'/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg'}
